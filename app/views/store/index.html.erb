@@ -5,7 +5,9 @@
 		<img src="<%= product.image_url%>">
 		<h3><%= h(product.title)%></h3>
 		<%= product.description %>
-		<span class="price"><%= number_to_currency(product.price) %></span>
+		<span class="price"><%= number_to_currency(product.price, :unit => "&pound;", 
+																   :separator => ",", :delimiter => ""
+		 ) %></span>
 		<%= button_to "Add to Cart", :action => :add_to_cart, :id => product %>
 	</div>
 <% end %>
