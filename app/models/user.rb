@@ -1,4 +1,5 @@
 require 'digest/sha1'
+
 class User < ActiveRecord::Base
   
   validates_presence_of		:name
@@ -29,7 +30,7 @@ class User < ActiveRecord::Base
   	@password = pwd
   	return if pwd.blank?
   	create_new_salt
-  	self.hashed_password = User.encryptd_password(self.password, self.salt)
+  	self.hashed_password = User.encrypted_password(self.password, self.salt)
   end
   
   
@@ -46,6 +47,5 @@ private
   def self.encrypted_password(password, salt)
   	string_to_hash = password + "wibble" + salt
   	Digest::SHA1.hexdigest(string_to_hash)
-  end
-    
+  end    
 end
