@@ -10006,3 +10006,1121 @@ Rendering template within layouts/store
 Rendering store/index
 Rendered store/_cart (0.0ms)
 Completed in 62ms (View: 31, DB: 0) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090106202840)
+Migrating to AddPriceToProduct (20090106211558)
+Migrating to AddTestData (20090106224216)
+Migrating to CreateSessions (20090214024730)
+Migrating to CreateOrders (20090304031611)
+Migrating to CreateLineItems (20090304031631)
+Migrating to CreateUsers (20090306211150)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (172.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (203.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090306211150')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("line_items")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("orders")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:11:43) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (0.0ms)
+Completed in 172ms (View: 157, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2009-03-06 16:11:51) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b"}
+Redirected to actionindex
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:11:52) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (0.0ms)
+Completed in 62ms (View: 46, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2009-03-06 16:11:55) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b"}
+Redirected to actionindex
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:11:55) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mProduct Load (31.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (0.0ms)
+Completed in 141ms (View: 94, DB: 31) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2009-03-06 16:11:57) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b"}
+Redirected to actionindex
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/store/checkout]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:11:57) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (0.0ms)
+Completed in 78ms (View: 31, DB: 16) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-03-06 16:12:12) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b", "id"=>"8"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 8) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (15.0ms)
+Rendered store/_cart (15.0ms)
+Completed in 78ms (View: 31, DB: 0) | 200 OK [http://localhost/store/add_to_cart/8]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:17:09) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart (0.0ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#jim (for 127.0.0.1 at 2009-03-06 16:31:38) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+
+
+ActionController::UnknownAction (No action responded to jim. Actions: add_to_cart, checkout, empty_cart, index, and save_order):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-03-06 16:31:48) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+Attempt to access invalid product 
+Redirected to actionindex
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/store/add_to_cart/]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:31:49) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart_item (15.0ms)
+Rendered store/_cart (15.0ms)
+Completed in 62ms (View: 46, DB: 31) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2009-03-06 16:31:55) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b"}
+Rendering template within layouts/store
+Rendering store/checkout
+Rendered store/_cart_item (16.0ms)
+Rendered store/_cart (16.0ms)
+Completed in 125ms (View: 109, DB: 0) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#save_order (for 127.0.0.1 at 2009-03-06 16:32:23) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"commit"=>"Place Order", "order"=>{"name"=>"Joe John", "pay_type"=>"check", "address"=>"Johnson and johnson", "email"=>"j.j@jjohns.com"}, "authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b"}
+  [4;35;1mOrder Create (16.0ms)[0m   [0mINSERT INTO "orders" ("name", "updated_at", "pay_type", "address", "email", "created_at") VALUES('Joe John', '2009-03-06 22:32:23', 'check', 'Johnson and johnson', 'j.j@jjohns.com', '2009-03-06 22:32:23')[0m
+  [4;36;1mLineItem Create (31.0ms)[0m   [0;1mINSERT INTO "line_items" ("order_id", "updated_at", "total_price", "product_id", "quantity", "created_at") VALUES(4, '2009-03-06 22:32:23', 29.95, 8, 1, '2009-03-06 22:32:23')[0m
+Redirected to actionindex
+Completed in 266ms (DB: 47) | 302 Found [http://localhost/store/save_order]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-06 16:32:25) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (0.0ms)
+Completed in 235ms (View: 47, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-03-06 16:33:52) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfimation_of' for #<Class:0x47eda34>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:8
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:5:in `index'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (78.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-06 16:33:56) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+
+
+ActionController::RoutingError (No route matches "/user" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-06 16:34:09) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfimation_of' for #<Class:0x45c48e8>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:8
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:27:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (437.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-06 16:46:22) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfimation_of' for #<Class:0x4801e6c>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:9
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:27:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (78.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-06 16:53:19) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfimation_of' for #<Class:0x468ea80>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:9
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:27:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (203.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (78.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-03-06 16:55:05) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"id"=>"create"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfimation_of' for #<Class:0x4874174>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:9
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:16:in `show'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (63.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090106202840)
+Migrating to AddPriceToProduct (20090106211558)
+Migrating to AddTestData (20090106224216)
+Migrating to CreateSessions (20090214024730)
+Migrating to CreateOrders (20090304031611)
+Migrating to CreateLineItems (20090304031631)
+Migrating to CreateUsers (20090306211150)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("line_items")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("orders")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-06 17:01:19) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfimation_of' for #<Class:0x4893218>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:9
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:27:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (62.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-06 17:02:25) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `validates_comfirmation_of' for #<Class:0x472d39c>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:9
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:382:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:381:in `load_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:256:in `require_or_load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:427:in `load_missing_constant'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:77:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:89:in `const_missing'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:95:in `const_missing'
+    /app/controllers/users_controller.rb:27:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (94.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (31.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-06 17:03:11) [GET]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+Rendering template within layouts/users
+Rendering users/new
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-03-06 17:03:35) [POST]
+  Session ID: 48f9b5687f5c15ae814ad54b22c8c88b
+  Parameters: {"user"=>{"name"=>"", "password"=>""}, "commit"=>"Add User", "authenticity_token"=>"2adb06e71733048a3fe63b354341c339598b8f3b"}
+  [4;36;1mUser Exists (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 63ms (View: 16, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-20 16:08:13) [GET]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Rendered store/_cart (0.0ms)
+Completed in 203ms (View: 172, DB: 0) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-03-20 16:08:34) [POST]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"6f4ba43f332a80a8ecdccdcacb2332a577206fe0", "id"=>"8"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 8) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (0.0ms)
+Rendered store/_cart (16.0ms)
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://localhost/store/add_to_cart/8]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-03-20 16:08:38) [POST]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"6f4ba43f332a80a8ecdccdcacb2332a577206fe0", "id"=>"8"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 8) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (15.0ms)
+Rendered store/_cart (15.0ms)
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/store/add_to_cart/8]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-03-20 16:09:46) [GET]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 62ms (View: 15, DB: 31) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-20 16:09:51) [GET]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+Rendering template within layouts/users
+Rendering users/new
+Completed in 47ms (View: 31, DB: 15) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-03-20 16:10:41) [POST]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  Parameters: {"user"=>{"name"=>"Nancy Drew", "password"=>"mystery"}, "commit"=>"Add User", "authenticity_token"=>"6f4ba43f332a80a8ecdccdcacb2332a577206fe0"}
+
+
+NameError (undefined local variable or method `create_new_salt' for #<User:0x46f3ea8>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/attribute_methods.rb:260:in `method_missing'
+    /app/models/user.rb:32:in `password='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `attributes='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `attributes='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2283:in `initialize'
+    /app/controllers/users_controller.rb:43:in `new'
+    /app/controllers/users_controller.rb:43:in `create'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (78.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (63.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-03-20 16:18:51) [GET]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 218ms (View: 187, DB: 31) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-03-20 16:18:55) [GET]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+Rendering template within layouts/users
+Rendering users/new
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-03-20 16:19:12) [POST]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  Parameters: {"user"=>{"name"=>"Nancy Drew", "password"=>"mystery"}, "commit"=>"Add User", "authenticity_token"=>"6f4ba43f332a80a8ecdccdcacb2332a577206fe0"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `encryptd_password' for #<Class:0x4761548>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:33:in `password='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `attributes='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `attributes='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2283:in `initialize'
+    /app/controllers/users_controller.rb:43:in `new'
+    /app/controllers/users_controller.rb:43:in `create'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (94.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (16.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-03-20 16:21:12) [POST]
+  Session ID: dfd13db4ea064470f58b4fe75b722bd1
+  Parameters: {"user"=>{"name"=>"Nancy Drew", "password"=>"mystery"}, "commit"=>"Add User", "authenticity_token"=>"6f4ba43f332a80a8ecdccdcacb2332a577206fe0"}
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+NoMethodError (undefined method `encryptd_password' for #<Class:0x45afdd0>):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/models/user.rb:32:in `password='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `attributes='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `attributes='
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2283:in `initialize'
+    /app/controllers/users_controller.rb:43:in `new'
+    /app/controllers/users_controller.rb:43:in `create'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (563.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (15.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
